@@ -1,64 +1,155 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Astro</title>
-        <link rel="stylesheet" href="style.css">
-        <style>
-            .crystal-ball {
-                width: 300px;
-                height: 300px;
-                background: radial-gradient(circle, #f1e5fc, #9595be);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-                padding: 20px;
-                color: black;
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-                margin-top: 20px;
-            }
-        </style>
-
-    </head>
-    <body class="MainPage">
-        <div class="container">
-            <div class="search-bar">
-                <input type="text" id="zodiacInput" placeholder="Enter Sign">
-                <button onclick="generateRandomContent()"><img src="search.png"></button>
-            </div>
-            <div class="crystal-ball" id="output">🔮 Your fortune awaits... 🔮</div>
-            <marquee class="star-marquee">✨ 🌟 Seek the wisdom of the stars 🌟 ✨</marquee>
-        </div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 ASTROpsychosis 🔮</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: black;
+            color: #2e042c;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+        .crystal-ball {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #cf96f7, #271e29);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            color: #270431;
+            box-shadow: 0px 0px 30px rgba(247, 162, 162, 0.8);
+            margin: 20px auto;
+            border: 5px solid rgb(247, 167, 223);
+        }
+        .glitch {
+            font-size: 32px;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            animation: glitch 0.5s infinite;
+            color: rgb(255, 196, 0);
+            text-transform: uppercase;
+            background: rgb(248, 248, 145);
+            padding: 10px;
+            border: 5px solid rgb(255, 0, 234);
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            25% { text-shadow: -2px -2px cyan; }
+            50% { text-shadow: 2px -2px magenta; }
+            75% { text-shadow: -2px 2px lime; }
+            100% { text-shadow: 2px 2px blue; }
+        }
+        .ads {
+            width: 200px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .ad-box {
+            background: rgb(248, 248, 150);
+            color: rgb(236, 119, 10);
+            padding: 10px;
+            border: 3px solid black;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .zodiac-list {
+            width: 200px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border: 2px solid #fde276;
+            color: #fde78f;
+            font-size: 14px;
+            text-align: left;
+        }
+        .zodiac-list h3 {
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="zodiac-list">
+        <h3>Zodiac Signs & Dates</h3>
+        <p>♈ Aries: Mar 21 - Apr 19</p>
+        <p>♉ Taurus: Apr 20 - May 20</p>
+        <p>♊ Gemini: May 21 - Jun 20</p>
+        <p>♋ Cancer: Jun 21 - Jul 22</p>
+        <p>♌ Leo: Jul 23 - Aug 22</p>
+        <p>♍ Virgo: Aug 23 - Sep 22</p>
+        <p>♎ Libra: Sep 23 - Oct 22</p>
+        <p>♏ Scorpio: Oct 23 - Nov 21</p>
+        <p>♐ Sagittarius: Nov 22 - Dec 21</p>
+        <p>♑ Capricorn: Dec 22 - Jan 19</p>
+        <p>♒ Aquarius: Jan 20 - Feb 18</p>
+        <p>♓ Pisces: Feb 19 - Mar 20</p>
+    </div>
+    <div class="ads">
+        <div class="ad-box">🚨 LIMITED TIME OFFER! GET YOUR TRUE READING NOW! 🚨</div>
+        <div class="ad-box">⚠️ WARNING: The Stars Have a Message! DO NOT IGNORE! ⚠️</div>
+    </div>
+    <div class="container">
+        <h1 class="glitch">🚨 Warning: The Stars Have a Message 🚨</h1>
+        <input type="text" id="zodiacInput" placeholder="ENTER YOUR SIGN NOW!!!">
+        <button onclick="generateDarkHoroscope()">REVEAL YOUR FATE </button>
+        <div class="crystal-ball" id="output">🔮 They Are Whispering... 🔮</div>
     </div>
     <script>
-        function generateRandomContent() {
-            const zodiacMessages = {
-                aries: ["Aries, harness your fire energy today!", "Charge forward, but don't forget to breathe."],
-                taurus: ["Ground yourself in nature, Taurus.", "Indulge in life's simple pleasures today."],
-                gemini: ["Your words hold magic today, Gemini.", "Duality is your strength, embrace it."],
-                cancer: ["Feel your emotions deeply, but don’t dwell.", "Your intuition will guide you well today."],
-                leo: ["Shine your light brightly, Leo!", "Your confidence is magnetic today."],
-                virgo: ["Organization is your superpower today.", "Small details lead to big success, Virgo."],
-                libra: ["Find balance in the chaos today.", "Beauty and harmony surround you, embrace it."],
-                scorpio: ["Your passion is unmatched today, Scorpio.", "Trust your instincts, they won't fail you."],
-                sagittarius: ["Adventure is calling you, Sagittarius!", "Seek knowledge and expand your horizons."],
-                capricorn: ["Your discipline will bring rewards.", "Set your sights high, Capricorn!"],
-                aquarius: ["Innovate and inspire today.", "Your uniqueness is your power, embrace it!"],
-                pisces: ["Dream big, Pisces, the universe is listening.", "Your creativity is overflowing today."]
+        function generateDarkHoroscope() {
+            const darkMessages = {
+                aries: ["No matter how hard you push, it will never be enough.", "You act fearless, but deep down, you're terrified of failure.", "Someone you love is keeping a secret."],
+                taurus: ["All the comfort you build will crumble before your eyes.","The stability you crave is an illusion.", "You think you're grounded, but you are stuck, forever stagnant."],
+                gemini: ["Everyone knows you're faking it. Even you.", "You are two people, but neither is real.","Are you sure you're the real you today?"],
+                cancer: ["They don't love you as much as you love them.", "Your emotions will swallow you whole, and no one will notice."],
+                leo: ["No matter how bright you shine, you will always feel unseen.", "The applause will stop. Then what?", "Your reflection moves when you are not looking."],
+                virgo: ["You will never reach perfection, yet you will die trying.", "You see the flaws in everything, except in yourself. That’s the biggest flaw of all.", "You forgot something important, It will cost you."],
+                libra: ["You bend to keep the peace, but no one will do the same for you.", "You are nothing without someone else to define you.", "No decision will ever be the right one."],
+                scorpio: ["You crave depth, but drown in the darkness you create.", "Trust is a myth you tell yourself to sleep at night."],
+                sagittarius: ["You run and run, but there is nothing waiting for you.", "You say you love freedom, but what if you’re just afraid to stay?"],
+                capricorn: ["All the success in the world won't fill the void inside you.", "You build and build, but for what? A grave of your own making?", "Your success is meaningless."],
+                aquarius: ["You claim to be different, yet you are just as lost as the rest.", "Your ideas are not your own", "You want to save the world, but you can’t even save yourself."],
+                pisces: ["You dream so much because reality is unbearable.", "You let yourself be consumed, and one day, there will be nothing left.", "Your dreams are trying to tell you something. Listen carefully."]
             };
             let input = document.getElementById("zodiacInput").value.toLowerCase();
             let output = document.getElementById("output");
-            if (zodiacMessages[input]) {
-                let randomIndex = Math.floor(Math.random() * zodiacMessages[input].length);
-                output.textContent = zodiacMessages[input][randomIndex];
+            if (darkMessages[input]) {
+                let randomIndex = Math.floor(Math.random() * darkMessages[input].length);
+                output.textContent = darkMessages[input][randomIndex];
             } else {
-                output.textContent = "Hmm... are you sure that’s a zodiac sign?";
+                output.textContent = "The void does not recognize that name...";
             }
         }
+        function triggerRandomPopup() {
+            setTimeout(() => {
+                alert("🚨 Special Offer! EXTENDED READING FOR ONLY $6.66! CLICK NOW! 🚨");
+                triggerRandomPopup();
+            }, Math.random() * 20000 + 5000);
+        }
+        triggerRandomPopup();
     </script>
 </body>
 </html>
