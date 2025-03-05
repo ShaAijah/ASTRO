@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background: black;
+            background-image: url("background.png");
+            background-size: cover;
+            background-position: center;
             color: #2e042c;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -14,6 +16,8 @@
             font-weight: bold;
             display: flex;
             justify-content: center;
+            width: 100vw;
+            height: 100vh;
         }
         .container {
             margin-top: 20px;
@@ -22,7 +26,8 @@
         .crystal-ball {
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, #cf96f7, #271e29);
+            background-image: url("moon.png");
+            background: radial-gradient(circle, #cf96f748, #271e2957);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -31,10 +36,10 @@
             font-size: 20px;
             font-weight: bold;
             padding: 20px;
-            color: #270431;
+            color: #c976e0;
             box-shadow: 0px 0px 30px rgba(247, 162, 162, 0.8);
             margin: 20px auto;
-            border: 5px solid rgb(247, 167, 223);
+            border: 5px solid rgba(247, 167, 223, 0.267);
         }
         .glitch {
             font-size: 32px;
@@ -42,9 +47,9 @@
             position: relative;
             display: inline-block;
             animation: glitch 0.5s infinite;
-            color: rgb(255, 196, 0);
+            color: rgb(127, 3, 158);
             text-transform: uppercase;
-            background: rgb(248, 248, 145);
+            background: rgb(242, 171, 245);
             padding: 10px;
             border: 5px solid rgb(255, 0, 234);
         }
@@ -62,8 +67,8 @@
             right: 20px;
         }
         .ad-box {
-            background: rgb(248, 248, 150);
-            color: rgb(236, 119, 10);
+            background: rgb(93, 49, 107);
+            color: rgb(236, 63, 10);
             padding: 10px;
             border: 3px solid black;
             font-weight: bold;
@@ -81,8 +86,8 @@
             left: 20px;
             background: rgba(0, 0, 0, 0.8);
             padding: 10px;
-            border: 2px solid #fde276;
-            color: #fde78f;
+            border: 2px solid #f3c7f8;
+            color: #efc7fc;
             font-size: 14px;
             text-align: left;
         }
@@ -114,7 +119,7 @@
     </div>
     <div class="container">
         <h1 class="glitch">🚨 Warning: The Stars Have a Message 🚨</h1>
-        <input type="text" id="zodiacInput" placeholder="ENTER YOUR SIGN NOW!!!">
+        <input type="text" id="zodiacInput" placeholder="ENTER YOUR SIGN NOW">
         <button onclick="generateDarkHoroscope()">REVEAL YOUR FATE </button>
         <div class="crystal-ball" id="output">🔮 They Are Whispering... 🔮</div>
     </div>
