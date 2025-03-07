@@ -1,20 +1,22 @@
 body.cosmic-background {
-    background: url('stars.jpg');
+   
     background-size: cover;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #f1e28b;
+    color: #000000;
     flex-direction: column;
+    background-color: #e7dada;
 }
 
 body.MainPage {
-    background: url('stars.jpg');
+    background: url('background.png');
     background-size: cover;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(221, 198, 198);
 }
 
 .star-marquee {
@@ -32,7 +34,7 @@ body.MainPage {
     padding: 50px;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgb(243, 224, 113);
-    color: #f3df70;
+    color: #f3c570;
 }
 
 .cosmic-entrance h1 {
@@ -47,7 +49,7 @@ body.MainPage {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
+    box-shadow: 0px 0px 20px rgb(255, 136, 0);
 }
 
 .container {
@@ -67,8 +69,8 @@ body.MainPage {
     align-items: center;
     border-radius: 60px;
     padding: 11px 25px;
-    border: 2px solid #f3e7a3;
-    box-shadow: 0px 0px 30px rgb(235, 220, 140);
+    border: 2px solid #f3c7a3;
+    box-shadow: 0px 0px 30px rgb(235, 175, 140);
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 30px;
@@ -81,7 +83,7 @@ body.MainPage {
     outline: none;
     padding: 24px 20px;
     font-size: 22px;
-    color: #f3de6a;
+    color: #f3b36a;
     text-align: center;
 }
 
@@ -97,5 +99,8 @@ body.MainPage {
     height: 55px;
     background: #fae46a;
     cursor: pointer;
-    box-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
+    box-shadow: 0px 0px 20px rgb(255, 123, 0);
+}
+.crystal-ball {
+    background-image: url('moon.png');
 }

@@ -76,6 +76,7 @@
             text-align: center;
             animation: blink 1s infinite;
         }
+        
         @keyframes blink {
             50% { opacity: 0; }
         }
@@ -126,18 +127,18 @@
     <script>
         function generateDarkHoroscope() {
             const darkMessages = {
-                aries: ["No matter how hard you push, it will never be enough.", "You act fearless, but deep down, you're terrified of failure.", "Someone you love is keeping a secret."],
-                taurus: ["All the comfort you build will crumble before your eyes.","The stability you crave is an illusion.", "You think you're grounded, but you are stuck, forever stagnant."],
-                gemini: ["Everyone knows you're faking it. Even you.", "You are two people, but neither is real.","Are you sure you're the real you today?"],
-                cancer: ["They don't love you as much as you love them.", "Your emotions will swallow you whole, and no one will notice."],
-                leo: ["No matter how bright you shine, you will always feel unseen.", "The applause will stop. Then what?", "Your reflection moves when you are not looking."],
+                aries: ["No matter how hard you push, it will never be enough.", "You act fearless, but deep down, you're terrified of failure.", "Someone you love is keeping a secret.", "You fight for everything, yet nothing ever feels like a victory."],
+                taurus: ["All the comfort you build will crumble before your eyes.","The stability you crave is an illusion.", "You think you're grounded, but you are stuck, forever stagnant.", "You build walls to keep others out, but you are the one trapped inside.", "Change terrifies you, but staying the same will destroy you."],
+                gemini: ["Everyone knows you're faking it. Even you.", "You are two people, but neither is real.","Are you sure you're the real you today?", "Your words charm everyone, but they mean nothing."],
+                cancer: ["They don't love you as much as you love them.", "Your emotions will swallow you whole, and no one will notice.", "Your heart is too big for a world that does not care."],
+                leo: ["No matter how bright you shine, you will always feel unseen.", "The applause will stop. Then what?", "Your reflection moves when you are not looking.","Your confidence is a performance, and the crowd is getting bored.", "You crave admiration, but inside, you feel hollow."],
                 virgo: ["You will never reach perfection, yet you will die trying.", "You see the flaws in everything, except in yourself. That’s the biggest flaw of all.", "You forgot something important, It will cost you."],
-                libra: ["You bend to keep the peace, but no one will do the same for you.", "You are nothing without someone else to define you.", "No decision will ever be the right one."],
-                scorpio: ["You crave depth, but drown in the darkness you create.", "Trust is a myth you tell yourself to sleep at night."],
-                sagittarius: ["You run and run, but there is nothing waiting for you.", "You say you love freedom, but what if you’re just afraid to stay?"],
+                libra: ["You bend to keep the peace, but no one will do the same for you.", "You are nothing without someone else to define you.", "No decision will ever be the right one.","You balance everything but your own emotions.","Your charm keeps people close, but they never stay."  ],
+                scorpio: ["You crave depth, but drown in the darkness you create.", "Trust is a myth you tell yourself to sleep at night.", "You crave loyalty, but you trust no one.", "The pain you hold onto will be the only thing that stays." ],
+                sagittarius: ["You run and run, but there is nothing waiting for you.", "You say you love freedom, but what if you’re just afraid to stay?", "You chase adventure, but you're just running from yourself.","The thrill fades, and all that’s left is the emptiness you refuse to face."],
                 capricorn: ["All the success in the world won't fill the void inside you.", "You build and build, but for what? A grave of your own making?", "Your success is meaningless."],
-                aquarius: ["You claim to be different, yet you are just as lost as the rest.", "Your ideas are not your own", "You want to save the world, but you can’t even save yourself."],
-                pisces: ["You dream so much because reality is unbearable.", "You let yourself be consumed, and one day, there will be nothing left.", "Your dreams are trying to tell you something. Listen carefully."]
+                aquarius: ["You claim to be different, yet you are just as lost as the rest.", "Your ideas are not your own", "You want to save the world, but you can’t even save yourself.", "You fight for change, but deep down, you don’t believe it will come.", "You distance yourself to avoid pain, but it only isolates you."],
+                pisces: ["You dream so much because reality is unbearable.", "You let yourself be consumed, and one day, there will be nothing left.", "Your dreams are trying to tell you something. Listen carefully.", "You romanticize suffering, but pain is not poetry.", "Your dreams are beautiful, but they will never be real."]
             };
             let input = document.getElementById("zodiacInput").value.toLowerCase();
             let output = document.getElementById("output");
